@@ -1,0 +1,78 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include "sll.h"
+
+void insert_at_end(List *list, int data) {
+	Node* new=(Node *)malloc(sizeof(Node));
+	new->data=data;new->link=NULL;
+	if(list->head==NULL){
+		list->head=new;
+	}
+	else{
+		Node *temp;temp=list->head;
+		while(temp->link!=NULL){
+			temp=temp->link;
+		}
+		temp->link=new;
+	}
+}
+void list_delete_front(List* list) {
+	Node * temp;
+	if(list->head==NULL){
+		//no operations
+	}
+	else{
+		list->head=list->head->link;
+	}
+
+}
+
+void list_insert_at (List *list, int data, int position)
+{
+	Node* temp;Node* new=(Node *)malloc(sizeof(Node));
+	new->data=data;
+	new->link=NULL;
+	if(list->head==NULL){
+		list->head=new;
+	}
+	else if(position==0){
+		new->link=list->head;
+		list->head=new;
+	}
+	else{
+		int i=0;
+		Node *temp,*prev;temp=list->head;
+		while(temp->link!=NULL && i<position){
+			prev=temp;
+			temp=temp->link;
+			i++;
+		}
+		if(i==position){
+			new->link=prev->link;
+			prev->link=new;
+		}
+		
+		else if(++i==position){
+			temp->link=new;
+		}
+		else{
+			//no operations
+		}
+	}
+}
+
+void list_reverse(List* list)
+{
+ 	Node *prev = NULL; 
+    Node *current = list->head; 
+    Node *next = NULL; 
+    while (current != NULL) 
+    { 
+        next = current->link; 
+        current->link = prev; 
+        prev = current; 
+        current = next; 
+    } 
+    list->head = prev; 
+}
+
