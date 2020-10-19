@@ -164,7 +164,7 @@ DNODE* enddel(DNODE* dl1){
         while(temp->right!=NULL){
             temp=temp->right;
         }
-        temp->left->right=NULL;//temp->next can also be replaced by temp->next as it is NULL
+        temp->left->right=NULL;//NULL can also be replaced by temp->right as it is NULL
         free(temp);
         //printf("\nThe element that was deleted was:%d",x);
         return dl1;
@@ -219,7 +219,7 @@ int search_del(DNODE *dl1,int x){
         }
         else
         {
-            while(temp->right!=NULL && temp->info==x){
+            while(temp->right!=NULL && temp->info!=x){
             temp=temp->right;
             }
             if(temp->info==x){

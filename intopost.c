@@ -64,24 +64,24 @@ int input_prec(char ch)
 
 int stack_prec(char ch)
 {
-	 switch(ch)
-	 {
-	case '+':
-	case '-': return 2;
-	case '*':
-	case '/': return 4;
-	case '^': return 5;
-	case '(': return 0;
-	case '#': return -1;
-	default : return 8;
+	switch(ch)
+	{
+		case '+':
+		case '-': return 2;
+		case '*':
+		case '/': return 4;
+		case '^': return 5;
+		case '(': return 0;
+		case '#': return -1;
+		default : return 8;
 	}
 }
 
 void push(char ch,char *s,int *t)
-    {    
-	 (*t)++;
-	 s[*t]=ch; 
-	 }
+{    
+	(*t)++;
+	s[*t]=ch; 
+}
 
 char pop(char *s,int *t)
 {   char x;

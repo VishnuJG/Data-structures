@@ -110,38 +110,3 @@ DNODE* enddel(DNODE* dl1){
 }
 
 
-DNODE* order_ins(DNODE* dll,int x){
-    DNODE *temp,*new;
-    new=(DNODE *)(malloc(sizeof(DNODE)));
-    new->info=x;
-    new->right=NULL;
-    new->left=NULL;
-    if(dll==NULL){
-        dll=new;
-    }
-    else{
-        if(x<(dll->info))
-        {
-            new->right=dll;
-            dll->left=new;
-            dll=new;
-        }
-        else{
-            temp=dll;
-            while((temp->info)<x && temp->right!=NULL){
-                temp=temp->right;
-            }
-            if(x<(temp->info)){
-                new->right=temp;
-                new->left=temp->left;
-                temp->left=new;
-                (new->left)->right=new;
-            }
-            else{
-                temp->right=new;
-                new->left=temp;
-            }
-        }
-    }
-    return dll;
-}

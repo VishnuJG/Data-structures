@@ -10,39 +10,39 @@ int t[50];
 
 void main()
 {
- int choice,i,x;
- i=0;
- 
- for(i=0;i<50;i++)
+	int choice,i,x;
+	i=0;
+
+	for(i=0;i<50;i++)
 	 t[i]=0;
 
-//reinitialize array index to 0.
- i=0;
- 
- while(1)
- {
- printf("\nEnter   1-> BST insertion\n\t2-> Preorder Tree Traversal\n\t");
- printf("3-> Inorder Tree Traversal \n\t4-> Postorder Tree Traversal\n\t5->exit\n");
- scanf("%d",&choice);
- switch(choice)
- {
-  	case 1: {
-		     printf("Enter the value..");
-			 scanf("%d",&x);
-			 BSTinsert(x);
-			}break;
-	case 2: {
-		     preorder(i);
-			}break;
-	case 3:{
-		     inorder(i);
-			}break;
-	case 4:{
-		     postorder(i);
-			}break;
-	default: exit(1);
-    }
-  }
+	//reinitialize array index to 0.
+	i=0;
+
+	while(1)
+	{
+		printf("\nEnter   1-> BST insertion\n\t2-> Preorder Tree Traversal\n\t");
+		printf("3-> Inorder Tree Traversal \n\t4-> Postorder Tree Traversal\n\t5->exit\n");
+		scanf("%d",&choice);
+		switch(choice)
+		{
+		case 1: {
+				 printf("Enter the value..");
+				 scanf("%d",&x);
+				 BSTinsert(x);
+				}break;
+		case 2: {
+				 preorder(i);
+				}break;
+		case 3:{
+				 inorder(i);
+				}break;
+		case 4:{
+				 postorder(i);
+				}break;
+		default: exit(1);
+		}
+	}
 }
 
 void BSTinsert(int x)

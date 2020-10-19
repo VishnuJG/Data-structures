@@ -5,7 +5,6 @@ void push(int,int*,int*);
 char pop(int*,int*);
 int pevaluate(char *);
 int isoper(char);
-//hi hellooo hfiashf
 
 void main()
 {

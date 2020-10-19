@@ -44,16 +44,16 @@ void main()
 int cenque(int que[],int *f,int *r,int x)
 {
 	if((((*r)+1)%size)==*f)
-					{
-					printf("Queue Full ");
-					return -1;
-					}
+	{
+	printf("Queue Full ");
+	return -1;
+	}
 	else {
-		   if(*f==-1 && *r== -1)(*f)++;
-	   	   *r=((*r)+1)%size;
-		   que[*r]=x;
-	     }
-		 return 1;
+	   if(*f==-1 && *r== -1)(*f)++;
+	   *r=((*r)+1)%size;
+	   que[*r]=x;
+	}
+	return 1;
 }
 
 void cdisplay(int que[],int *f,int *r)

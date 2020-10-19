@@ -109,7 +109,7 @@ int evaluate(struct tnode *t)
 	case '-': return(evaluate(t->left)-evaluate(t->right));
 	case '*': return(evaluate(t->left)*evaluate(t->right));
 	case '/': return(evaluate(t->left)/evaluate(t->right));
-	default: printf("%c=",t->data);
+	default: printf("\n%c=",t->data);
 	scanf("%d",&x);
 	return x;
 	}
